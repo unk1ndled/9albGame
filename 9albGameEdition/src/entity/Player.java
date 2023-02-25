@@ -38,18 +38,18 @@ public class Player extends Entity{
 	public void getPlayerImage()
 	{
 		try{
-			up1= ImageIO.read(getClass().getResourceAsStream("/player/ye_back_left.png"));
-			up2= ImageIO.read(getClass().getResourceAsStream("/player/ye_back_right.png"));
-			down1= ImageIO.read(getClass().getResourceAsStream("/player/ye_front_left.png"));
-		    down2= ImageIO.read(getClass().getResourceAsStream("/player/ye_front_right.png"));
-			left1= ImageIO.read(getClass().getResourceAsStream("/player/ye_side_left.png"));
-			left2= ImageIO.read(getClass().getResourceAsStream("/player/ye_side_walk_left.png"));
-			right1= ImageIO.read(getClass().getResourceAsStream("/player/ye_side_right.png"));
-			right2= ImageIO.read(getClass().getResourceAsStream("/player/ye_side_walk_right.png"));
-			restUp=ImageIO.read(getClass().getResourceAsStream("/player/rest1.png"));
-			restDown=ImageIO.read(getClass().getResourceAsStream("/player/rest1.png"));
-			restLeft=ImageIO.read(getClass().getResourceAsStream("/player/rest1.png"));
-			restRight=ImageIO.read(getClass().getResourceAsStream("/player/rest1.png"));
+			up1= ImageIO.read(getClass().getResourceAsStream("/player/ine_up_right.png"));
+			up2= ImageIO.read(getClass().getResourceAsStream("/player/ine_up_left.png"));
+			down1= ImageIO.read(getClass().getResourceAsStream("/player/ine_down_left.png"));
+		    down2= ImageIO.read(getClass().getResourceAsStream("/player/ine_down_right.png"));
+			left1= ImageIO.read(getClass().getResourceAsStream("/player/ine_left_1.png"));
+			left2= ImageIO.read(getClass().getResourceAsStream("/player/ine_left_2.png"));
+			right1= ImageIO.read(getClass().getResourceAsStream("/player/ine_right_1.png"));
+			right2= ImageIO.read(getClass().getResourceAsStream("/player/ine_right_2.png"));
+			restDown=ImageIO.read(getClass().getResourceAsStream("/player/ine_down_rest.png"));
+			restUp=ImageIO.read(getClass().getResourceAsStream("/player/ine_up_rest.png"));
+			restLeft=ImageIO.read(getClass().getResourceAsStream("/player/ine_rest_left.png"));
+			restRight=ImageIO.read(getClass().getResourceAsStream("/player/ine_rest_right.png"));
 
 
 		}catch (IOException e)
@@ -83,7 +83,7 @@ public class Player extends Entity{
 				worldX+= speed;
 			}
 			spriteCounter++;
-			if (spriteCounter>13)
+			if (spriteCounter>6)
 			{
 				if (spriteNum==1)
 	            {
@@ -101,10 +101,12 @@ public class Player extends Entity{
 		else {
 			if ((keyH.upLastPressed==true)||(keyH.downLastPressed==true)||(keyH.leftLastPressed==true)||(keyH.rightLastPressed==true))
 			{
+				
 				this.isResting=true;
-				if (keyH.upLastPressed==true)
+				
+				if (keyH.rightLastPressed==true)
 				{
-					direction="up";
+					direction="right";
 
 				}
 				if (keyH.downLastPressed==true)
@@ -112,14 +114,15 @@ public class Player extends Entity{
 					direction="down";
 
 				}
+				
+				if (keyH.upLastPressed==true)
+				{
+					direction="up";
+
+				}
 				if (keyH.leftLastPressed==true)
 				{
 					direction="left";
-
-				}
-				if (keyH.rightLastPressed==true)
-				{
-					direction="right";
 
 				}
 			}
@@ -184,16 +187,13 @@ public class Player extends Entity{
 				image = restUp;
 				  break;
 			case "down":
-				image = restUp;
-
+				image = restDown;
 				  break;
 			case "left":
-				image = restUp;
-
+				image = restLeft;
 				  break;
 			case "right":
-				image = restUp;
-
+				image = restRight;
 				  break;	  
 			
 			}
