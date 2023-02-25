@@ -89,6 +89,7 @@ public class TileManager {
 			int worldX = worldCol * gp.tileSize;
 			int worldY = worldRow * gp.tileSize;
 			int screenX = worldX - gp.player.worldX + gp.player.screenX;
+			//absolute position of a tile = screen center's absolute position + the distance between it and the tile (screenX=player.screenX)
 			int screenY = worldY - gp.player.worldY + gp.player.screenY;
 			
 			if( worldX + gp.tileSize > gp.player.worldX -gp.player.screenX &&
