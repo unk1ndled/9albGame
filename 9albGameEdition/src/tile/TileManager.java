@@ -42,9 +42,9 @@ public class TileManager {
 	}
 	
 	
-	public void loadMap(String s) {
+	public void loadMap(String mapPath) {
 		try {
-			InputStream is = getClass().getResourceAsStream(s);
+			InputStream is = getClass().getResourceAsStream(mapPath);
 			BufferedReader br = new BufferedReader(new InputStreamReader(is));
 			
 			int col =0;
