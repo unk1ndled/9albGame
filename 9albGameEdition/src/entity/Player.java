@@ -40,6 +40,11 @@ public class Player extends Entity{
 			left2= ImageIO.read(getClass().getResourceAsStream("/player/ye_side_walk_left.png"));
 			right1= ImageIO.read(getClass().getResourceAsStream("/player/ye_side_right.png"));
 			right2= ImageIO.read(getClass().getResourceAsStream("/player/ye_side_walk_right.png"));
+			restUp=ImageIO.read(getClass().getResourceAsStream("/player/rest1.png"));
+			restDown=ImageIO.read(getClass().getResourceAsStream("/player/rest1.png"));
+			restLeft=ImageIO.read(getClass().getResourceAsStream("/player/rest1.png"));
+			restRight=ImageIO.read(getClass().getResourceAsStream("/player/rest1.png"));
+
 
 		}catch (IOException e)
 		{
@@ -50,6 +55,7 @@ public class Player extends Entity{
 	{
 		if ((keyH.upPressed==true)||(keyH.downPressed==true)||(keyH.leftPressed==true)||(keyH.rightPressed==true)) 
 		{
+			this.isResting=false;
 			if (keyH.upPressed==true)
 			{
 				direction="up";
@@ -86,12 +92,40 @@ public class Player extends Entity{
 			}
 	
 		}
+		else {
+			if ((keyH.upLastPressed==true)||(keyH.downLastPressed==true)||(keyH.leftLastPressed==true)||(keyH.rightLastPressed==true))
+			{
+				this.isResting=true;
+				if (keyH.upLastPressed==true)
+				{
+					direction="up";
+
+				}
+				if (keyH.downLastPressed==true)
+				{
+					direction="down";
+
+				}
+				if (keyH.leftLastPressed==true)
+				{
+					direction="left";
+
+				}
+				if (keyH.rightLastPressed==true)
+				{
+					direction="right";
+
+				}
+			}
+		}
+		
 	}
 	public void draw(Graphics2D g2)
 	{
        // g2.setColor(Color.white);
         //g2.fillRect(x,y,gp.tileSize,gp.tileSize);
 		BufferedImage image=null;
+		if (!(isResting)) {
 		switch(direction)
 		{
 		case "up":
@@ -135,6 +169,29 @@ public class Player extends Entity{
 			}
 			  break;	  
 		
+		}}
+		else {
+
+			switch(direction)
+			{
+			case "up":
+				image = restUp;
+				  break;
+			case "down":
+				image = restUp;
+
+				  break;
+			case "left":
+				image = restUp;
+
+				  break;
+			case "right":
+				image = restUp;
+
+				  break;	  
+			
+			}
+			
 		}
 		g2.drawImage(image, x, y, gp.tileSize, gp.tileSize, null);
 	}
