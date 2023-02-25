@@ -9,7 +9,7 @@ public class Main {
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// CLOSES THE WINDOW WHEN PRESSING X
 		window.setResizable(false);
-		window.setTitle("JesusTok");
+		window.setTitle("<3");
 		
 		
 		
