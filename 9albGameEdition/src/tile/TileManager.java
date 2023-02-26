@@ -12,8 +12,8 @@ import main.GamePannel;
 
 public class TileManager {
 	GamePannel gp;
-	Tile[] tile;
-	int mapTileNum[][];
+	public Tile[] tile;
+	public int mapTileNum[][];
 	
 	public TileManager(GamePannel gp) {
 		
@@ -33,8 +33,10 @@ public class TileManager {
 			tile[1] =new Tile();
 			tile[1].image = ImageIO.read(getClass().getResourceAsStream("/tiles/grass00.png"));
 			
+			
 			tile[0] =new Tile();
 			tile[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
+			tile[1].collision=true;
 		}
 		catch(IOException e) {
 			e.printStackTrace();
