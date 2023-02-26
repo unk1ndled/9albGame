@@ -33,7 +33,6 @@ public class TileManager {
 			tile[0] =new Tile();
 			tile[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/grass00.png"));
 			
-			
 			tile[1] =new Tile();
 			tile[1].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
 			tile[1].collision=true;
@@ -91,10 +90,18 @@ public class TileManager {
 			int worldX = worldCol * gp.tileSize;
 			int worldY = worldRow * gp.tileSize;
 			int screenX = worldX - gp.player.worldX + gp.player.screenX;
+			//absolute position of a tile = screen center's absolute position + the distance between it and the tile (screenX=player.screenX)
 			int screenY = worldY - gp.player.worldY + gp.player.screenY;
 			
+			if( worldX + gp.tileSize > gp.player.worldX -gp.player.screenX &&
+				worldX - gp.tileSize < gp.player.worldX + gp.player.screenX &&
+				worldY + gp.tileSize > gp.player.worldY - gp.player.screenY &&
+				worldY - gp.tileSize < gp.player.worldY + gp.player.screenY) {
+				
+				g2.drawImage(tile[tileNum].image,screenX,screenY,gp.tileSize,gp.tileSize,null);
+			}
 			
-			g2.drawImage(tile[tileNum].image,screenX,screenY,gp.tileSize,gp.tileSize,null);
+			
 			worldCol++;
 
 			

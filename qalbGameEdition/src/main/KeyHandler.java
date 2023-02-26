@@ -15,18 +15,39 @@ public class KeyHandler implements KeyListener {
 		if (code == KeyEvent.VK_W)
 		{
 			upPressed = true;
+			upLastPressed = false;
+			downLastPressed = false;
+			leftLastPressed = false;
+			rightLastPressed = false;
+
+
+
 		}
 		if (code == KeyEvent.VK_S)
 		{
 			downPressed = true;
+			upLastPressed = false;
+			downLastPressed = false;
+			leftLastPressed = false;
+			rightLastPressed = false;
+
 		}
 		if (code == KeyEvent.VK_A)
 		{
 			leftPressed = true;
+			upLastPressed = false;
+			downLastPressed = false;
+			leftLastPressed = false;
+			rightLastPressed = false;
 		}
 		if (code == KeyEvent.VK_D)
 		{
 			rightPressed = true;
+			upLastPressed = false;
+			downLastPressed = false;
+			leftLastPressed = false;
+			rightLastPressed = false;
+
 		}
 	}
 

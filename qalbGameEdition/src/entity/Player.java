@@ -45,19 +45,18 @@ public class Player extends Entity{
 	public void getPlayerImage()
 	{
 		try{
-			up1= ImageIO.read(getClass().getResourceAsStream("/player/ye_back_left.png"));
-			up2= ImageIO.read(getClass().getResourceAsStream("/player/ye_back_right.png"));
-			down1= ImageIO.read(getClass().getResourceAsStream("/player/ye_front_left.png"));
-		    down2= ImageIO.read(getClass().getResourceAsStream("/player/ye_front_right.png"));
-			left1= ImageIO.read(getClass().getResourceAsStream("/player/ye_side_left.png"));
-			left2= ImageIO.read(getClass().getResourceAsStream("/player/ye_side_walk_left.png"));
-			right1= ImageIO.read(getClass().getResourceAsStream("/player/ye_side_right.png"));
-			right2= ImageIO.read(getClass().getResourceAsStream("/player/ye_side_walk_right.png"));
-			restUp=ImageIO.read(getClass().getResourceAsStream("/player/rest1.png"));
-			restDown=ImageIO.read(getClass().getResourceAsStream("/player/rest1.png"));
-			restLeft=ImageIO.read(getClass().getResourceAsStream("/player/rest1.png"));
-			restRight=ImageIO.read(getClass().getResourceAsStream("/player/rest1.png"));
-
+			up1= ImageIO.read(getClass().getResourceAsStream("/player/ine_up_right.png"));
+			up2= ImageIO.read(getClass().getResourceAsStream("/player/ine_up_left.png"));
+			down1= ImageIO.read(getClass().getResourceAsStream("/player/ine_down_left.png"));
+		    down2= ImageIO.read(getClass().getResourceAsStream("/player/ine_down_right.png"));
+			left1= ImageIO.read(getClass().getResourceAsStream("/player/ine_left_1.png"));
+			left2= ImageIO.read(getClass().getResourceAsStream("/player/ine_left_2.png"));
+			right1= ImageIO.read(getClass().getResourceAsStream("/player/ine_right_1.png"));
+			right2= ImageIO.read(getClass().getResourceAsStream("/player/ine_right_2.png"));
+			restDown=ImageIO.read(getClass().getResourceAsStream("/player/ine_down_rest.png"));
+			restUp=ImageIO.read(getClass().getResourceAsStream("/player/ine_up_rest.png"));
+			restLeft=ImageIO.read(getClass().getResourceAsStream("/player/ine_rest_left.png"));
+			restRight=ImageIO.read(getClass().getResourceAsStream("/player/ine_rest_right.png"));
 
 		}catch (IOException e)
 		{
