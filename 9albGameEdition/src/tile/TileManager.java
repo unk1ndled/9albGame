@@ -31,7 +31,7 @@ public class TileManager {
 			
 			//hna relation bin tiles w png 
 			tile[1] =new Tile();
-			tile[1].image = ImageIO.read(getClass().getResourceAsStream("/tiles/grass00.png"));
+			tile[1].image = ImageIO.read(getClass().getResourceAsStream("/tiles/grass01.png"));
 			
 			tile[0] =new Tile();
 			tile[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
