@@ -19,7 +19,7 @@ public class TileManager {
 		
 		this.gp = gp;
 		
-		tile = new Tile[10];
+		tile = new Tile[50];
 		mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 		
 		getTileImage();
@@ -29,14 +29,88 @@ public class TileManager {
 	public void getTileImage() {
 		try {
 			
-			//hna relation bin tiles w png 
-			tile[1] =new Tile();
-			tile[1].image = ImageIO.read(getClass().getResourceAsStream("/tiles/grass01.png"));
-			
-			
 			tile[0] =new Tile();
-			tile[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/red01.png"));
-			//tile[1].collision=true;
+			tile[0].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01_top_left.png"));
+			//tile[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
+			
+			tile[1] =new Tile();
+			tile[1].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01_top.png"));
+
+			tile[2] =new Tile();
+			tile[2].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01_top_right.png"));
+			
+			tile[3] =new Tile();
+			tile[3].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01_left.png"));
+			
+			tile[4] =new Tile();
+			tile[4].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01.png"));
+			
+			tile[5] =new Tile();
+			tile[5].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01_right.png"));
+			
+			tile[6] =new Tile();
+			tile[6].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01_bottom_left.png"));
+			
+			tile[7] =new Tile();
+			tile[7].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01_bottom.png"));
+			
+			tile[8] =new Tile();
+			tile[8].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01_bottom_right.png"));
+			
+			tile[9] =new Tile();
+			tile[9].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/tree01.png"));
+			
+			tile[10] =new Tile();
+			tile[10].image = ImageIO.read(getClass().getResourceAsStream("/tiles/ground03.png"));
+			
+			tile[11] =new Tile();
+			tile[11].image = ImageIO.read(getClass().getResourceAsStream("/tiles/inpt_default_outer_wall.png"));
+			
+			tile[12] =new Tile();
+			tile[12].image = ImageIO.read(getClass().getResourceAsStream("/tiles/ground01.png"));
+			
+			tile[13] =new Tile();
+			tile[13].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
+
+			tile[14] =new Tile();
+			tile[14].image = ImageIO.read(getClass().getResourceAsStream("/tiles/lightgrey.png"));
+			
+			tile[15] =new Tile();
+			tile[15].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
+			
+			tile[16] =new Tile();
+			tile[16].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
+			
+			tile[17] =new Tile();
+			tile[17].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
+			
+			tile[18] =new Tile();
+			tile[18].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
+			
+			tile[19] =new Tile();
+			tile[19].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
+			
+			tile[20] =new Tile();
+			tile[20].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
+			
+			tile[21] =new Tile();
+			tile[21].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
+			
+			tile[22] =new Tile();
+			tile[22].image = ImageIO.read(getClass().getResourceAsStream("/tiles/chbka.png"));
+			
+			tile[23] =new Tile();
+			tile[23].image = ImageIO.read(getClass().getResourceAsStream("/tiles/greymarkings.png"));
+			
+			tile[24] =new Tile();
+			tile[24].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
+			
+			
+			tile[11].collision=true;
+			tile[22].collision=true;
+			tile[9].collision=true;
+
+
 		}
 		catch(IOException e) {
 			e.printStackTrace();
