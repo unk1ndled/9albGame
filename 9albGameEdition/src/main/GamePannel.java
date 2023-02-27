@@ -8,16 +8,17 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 import entity.Player;
+import object.SuperObject;
 import tile.TileManager;
 
 public class GamePannel extends JPanel implements Runnable{
 	//Screen settings
-	final int originalTileSize = 16;
+	final int originalTileSize = 16;//16
 	final int scale = 3;
 	
 	public final int tileSize=originalTileSize*scale; //48*48 tile
-	public final int maxScreenCol = 16;
-	public final int maxScreenRow = 12;
+	public final int maxScreenCol = 25;
+	public final int maxScreenRow = 15;
 	public final int screenWidth = tileSize * maxScreenCol;//768 pixexls
 	public final int screenHeight = tileSize * maxScreenRow;//576 pixels
 	
@@ -35,12 +36,11 @@ public class GamePannel extends JPanel implements Runnable{
 	KeyHandler keyH = new KeyHandler();
 	Thread gameThread;
 	public CollisionChecker cChecker = new CollisionChecker(this);
+	public AssetSetter aSetter = new AssetSetter(this);
 	public Player player = new Player(this,keyH);
 	
+	public SuperObject obj[] = new SuperObject[10];//nmbr of diplayed objects of at same time
 	
-	int playerX=100;
-	int playerY=100;
-	int playerSpeed=3;
 	
     static int frames = 0 ;
     static int updates = 0;
@@ -54,6 +54,10 @@ public class GamePannel extends JPanel implements Runnable{
 	    this.setDoubleBuffered(true);
 	    this.addKeyListener(keyH);
 	    this.setFocusable(true);
+	}
+	
+	public void setupGame() {
+		aSetter.setObject();
 	}
 	
 	public void startGameThread()
@@ -98,8 +102,17 @@ public class GamePannel extends JPanel implements Runnable{
 		
 		Graphics2D g2 = (Graphics2D)g;
 		
+		//tile
 		tileM.draw(g2);
 		
+		//object
+		for(int i=0; i < obj.length; i++) {
+			if(obj[i]!=null) {
+				obj[i].draw(g2, this);
+			}
+		}
+		
+		//player
 		player.draw(g2);
 	
 	    g2.dispose();

@@ -19,9 +19,7 @@ public class KeyHandler implements KeyListener {
 			downLastPressed = false;
 			leftLastPressed = false;
 			rightLastPressed = false;
-
-
-
+			
 		}
 		if (code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN)
 		{
@@ -49,6 +47,8 @@ public class KeyHandler implements KeyListener {
 			rightLastPressed = false;
 
 		}
+
+		
 	}
 
 	@Override

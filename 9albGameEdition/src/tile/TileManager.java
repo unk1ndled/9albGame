@@ -1,4 +1,4 @@
-package tile;
+	package tile;
 
 import java.awt.Graphics2D;
 import java.io.BufferedReader;
@@ -35,8 +35,8 @@ public class TileManager {
 			
 			
 			tile[0] =new Tile();
-			tile[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
-			tile[1].collision=true;
+			tile[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/red01.png"));
+			//tile[1].collision=true;
 		}
 		catch(IOException e) {
 			e.printStackTrace();

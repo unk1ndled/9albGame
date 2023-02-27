@@ -39,7 +39,7 @@ public class Player extends Entity{
 	{
 		worldX=gp.tileSize*10 -(gp.tileSize/2);//xstarting position
 		worldY=gp.tileSize*10 -(gp.tileSize/2);//y starting position
-		speed = 5;
+		speed = 20;
 		direction="down";
 	}
 	public void getPlayerImage()
@@ -219,5 +219,6 @@ public class Player extends Entity{
 			
 		}
 		g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+		System.out.println("X : "+ worldX/48 + "   y : "+ worldY/48 );//TRUUUUUUE
 	}
 }
