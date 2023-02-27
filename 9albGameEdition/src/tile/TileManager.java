@@ -79,22 +79,22 @@ public class TileManager {
 			tile[15].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
 			
 			tile[16] =new Tile();
-			tile[16].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
+			tile[16].image = ImageIO.read(getClass().getResourceAsStream("/tiles/scenewall.png"));
 			
 			tile[17] =new Tile();
 			tile[17].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
 			
 			tile[18] =new Tile();
-			tile[18].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
+			tile[18].image = ImageIO.read(getClass().getResourceAsStream("/zlafa/zlafa03.png"));
 			
 			tile[19] =new Tile();
-			tile[19].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
+			tile[19].image = ImageIO.read(getClass().getResourceAsStream("/zlafa/zlafa01.png"));
 			
 			tile[20] =new Tile();
-			tile[20].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
+			tile[20].image = ImageIO.read(getClass().getResourceAsStream("/zlafa/zlafa02.png"));
 			
 			tile[21] =new Tile();
-			tile[21].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
+			tile[21].image = ImageIO.read(getClass().getResourceAsStream("/zlafa/zlafa_inner_walll.png"));
 			
 			tile[22] =new Tile();
 			tile[22].image = ImageIO.read(getClass().getResourceAsStream("/tiles/chbka.png"));
@@ -107,7 +107,9 @@ public class TileManager {
 			
 			
 			tile[11].collision=true;
+			tile[16].collision=true;
 			tile[22].collision=true;
+			tile[21].collision=true;
 			tile[9].collision=true;
 
 
