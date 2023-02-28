@@ -32,12 +32,21 @@ public class Player extends Entity{
 		solidArea =new Rectangle();
 		//solidArea.x= 8;
 		//solidArea.y=16;
-		solidArea.x= 14;
-		solidArea.y=28;
+		
+		solidArea.x= 10;
+		solidArea.y= 26;
+		
+		
+		solidAreaDefaultX=solidArea.x;
+		solidAreaDefaultY=solidArea.y;
 		
 
-		solidArea.width=20;
-		solidArea.height=20; 
+		
+
+		solidArea.width= 24;
+		solidArea.height= 20; 
+		
+		
 		
 		setDefaultValues();
 		getPlayerImage();
@@ -47,7 +56,7 @@ public class Player extends Entity{
 		worldX=gp.tileSize*45 -(gp.tileSize/2);//xstarting position
 		worldY=gp.tileSize*100 -(gp.tileSize/2);//y starting position
 		speed = 8;
-		direction="down";
+		direction="up";
 	}
 	public void getPlayerImage()
 	{
@@ -65,6 +74,7 @@ public class Player extends Entity{
 			restLeft=ImageIO.read(getClass().getResourceAsStream("/player/ine_rest_left.png"));
 			restRight=ImageIO.read(getClass().getResourceAsStream("/player/ine_rest_right.png"));
 
+			/*
 			up1= ImageIO.read(getClass().getResourceAsStream("/chat/chat6.png"));
 			up2= ImageIO.read(getClass().getResourceAsStream("/chat/chat4.png"));
 			down1= ImageIO.read(getClass().getResourceAsStream("/chat/chat1.png"));
@@ -78,7 +88,8 @@ public class Player extends Entity{
 			restLeft=ImageIO.read(getClass().getResourceAsStream("/chat/chat10.png"));
 			restRight=ImageIO.read(getClass().getResourceAsStream("/chat/chat11.png"));
 			 
-
+			*/
+			
 		}catch (IOException e)
 		{
 			e.printStackTrace();
