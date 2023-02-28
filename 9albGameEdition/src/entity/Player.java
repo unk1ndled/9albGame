@@ -18,6 +18,9 @@ public class Player extends Entity{
 	public final int screenX;
 	public final int screenY;
 	
+	int hasObject = 0;
+	
+	
 	public Player(GamePannel gp, KeyHandler keyH)
 	{
 		this.gp=gp;
@@ -32,8 +35,16 @@ public class Player extends Entity{
 		solidArea.x= 14;
 		solidArea.y=28;
 		
+<<<<<<< HEAD
+		solidAreaDefaultX = solidArea.x;
+		solidAreaDefaultY = solidArea.y;
+		
+		solidArea.width=28;
+		solidArea.height=28; 
+=======
 		solidArea.width=20;
 		solidArea.height=20; 
+>>>>>>> 1c33ff3b98505450428bff030efe599f6845684a
 		
 		setDefaultValues();
 		getPlayerImage();
@@ -106,6 +117,10 @@ public class Player extends Entity{
 			collisionOn= false;
 			gp.cChecker.checkTile(this);
 			
+			//CHECK OBJECT COLLISION 
+			int objIndex = gp.cChecker.checkObject(this, true);
+			interactWithObject(objIndex);
+			
 			//COLLISION==FALSE -->PLAYER MOVE
 			if(collisionOn == false) {
 				switch(direction) {
@@ -164,6 +179,24 @@ public class Player extends Entity{
 		}
 		
 	}
+	
+	public void interactWithObject(int i) {
+		
+		if(i != 999) {
+			String objectName = gp.obj[i].name;
+			switch (objectName) {
+			case "Coffee":
+				System.out.print("you obtained BlackTux");
+				gp.obj[i] = null;
+				break;
+			case "Object":
+				//hna kadir interaction maa object 
+				break;
+			}
+		}
+		
+	}
+	
 	public void draw(Graphics2D g2)
 	{
        // g2.setColor(Color.white);
