@@ -61,6 +61,19 @@ public class Player extends Entity{
 			restLeft=ImageIO.read(getClass().getResourceAsStream("/player/ine_rest_left.png"));
 			restRight=ImageIO.read(getClass().getResourceAsStream("/player/ine_rest_right.png"));
 
+			up1= ImageIO.read(getClass().getResourceAsStream("/chat/chat6.png"));
+			up2= ImageIO.read(getClass().getResourceAsStream("/chat/chat4.png"));
+			down1= ImageIO.read(getClass().getResourceAsStream("/chat/chat1.png"));
+		    down2= ImageIO.read(getClass().getResourceAsStream("/chat/chat9.png"));
+			left1= ImageIO.read(getClass().getResourceAsStream("/chat/chat7.png"));
+			left2= ImageIO.read(getClass().getResourceAsStream("/chat/chat2.png"));
+			right1= ImageIO.read(getClass().getResourceAsStream("/chat/chat8.png"));
+			right2= ImageIO.read(getClass().getResourceAsStream("/chat/chat3.png"));
+			restDown=ImageIO.read(getClass().getResourceAsStream("/chat/chat12.png"));
+			restUp=ImageIO.read(getClass().getResourceAsStream("/chat/chat5.png"));
+			restLeft=ImageIO.read(getClass().getResourceAsStream("/chat/chat10.png"));
+			restRight=ImageIO.read(getClass().getResourceAsStream("/chat/chat11.png"));
+			 
 
 		}catch (IOException e)
 		{
