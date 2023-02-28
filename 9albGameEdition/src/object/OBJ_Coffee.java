@@ -13,5 +13,11 @@ public class OBJ_Coffee extends SuperObject {
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
+		
+		collision = true;
+		
+		//you can change the solid area for each object or keep the default values from superobject
+		//solidArea.x=80;
+		//solidArea.y=80;
 	}
 }
