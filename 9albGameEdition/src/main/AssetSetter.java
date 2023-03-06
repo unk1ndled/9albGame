@@ -1,5 +1,6 @@
 package main;
 
+import entity.NPC;
 import object.OBJ_Coffee;
 import object.OBJ_Table;
 import object.OBJ_Chair;
@@ -135,5 +136,16 @@ public class AssetSetter {
 		
 		
 		
+	}
+	public void setNPC() {
+		gp.npc[0]= new NPC(gp,"greenRizz");
+		gp.npc[0].worldX=gp.tileSize*52;
+		gp.npc[0].worldY=gp.tileSize*99;
+
+		
+		gp.npc[1]= new NPC(gp,"redHacker");
+		gp.npc[1].worldX=gp.tileSize*45;
+		gp.npc[1].worldY=gp.tileSize*99;
+
 	}
 }
