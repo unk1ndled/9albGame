@@ -12,18 +12,17 @@ import main.GamePannel;
 import main.KeyHandler;
 
 public class Player extends Entity{
-	GamePannel gp;
-	KeyHandler keyH;
 	
+	KeyHandler keyH;
 	public final int screenX;
 	public final int screenY;
-	
 	int hasObject = 0;
 	
 	
 	public Player(GamePannel gp, KeyHandler keyH)
 	{
-		this.gp=gp;
+		super(gp);
+		
 		this.keyH=keyH;
 		
 		screenX = gp.screenWidth/2 - (gp.tileSize/2);
@@ -36,13 +35,9 @@ public class Player extends Entity{
 		solidArea.x= 10;
 		solidArea.y= 26;
 		
-		
 		solidAreaDefaultX=solidArea.x;
 		solidAreaDefaultY=solidArea.y;
 		
-
-		
-
 		solidArea.width= 24;
 		solidArea.height= 20; 
 		
@@ -55,9 +50,10 @@ public class Player extends Entity{
 	{
 		worldX=gp.tileSize*45 -(gp.tileSize/2);//xstarting position
 		worldY=gp.tileSize*100 -(gp.tileSize/2);//y starting position
-		speed = 8;
+		speed = 6;
 		direction="up";
 	}
+	
 	public void getPlayerImage()
 	{
 		try{

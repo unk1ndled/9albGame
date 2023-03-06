@@ -1,12 +1,14 @@
 package main;
 
 import java.awt.Color;
+
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 import javax.swing.JPanel;
 
+import entity.Entity;
 import entity.Player;
 import object.SuperObject;
 import tile.TileManager;
@@ -39,8 +41,10 @@ public class GamePannel extends JPanel implements Runnable{
 	public AssetSetter aSetter = new AssetSetter(this);
 	public Player player = new Player(this,keyH);
 	
-	public SuperObject obj[] = new SuperObject[10];//nmbr of diplayed objects of at same time
-	
+	public SuperObject obj[] = new SuperObject[10]; //nmbr of diplayed objects of at same time
+	public Entity npc[] = new Entity[10];
+		
+
 	
     static int frames = 0 ;
     static int updates = 0;
@@ -58,6 +62,7 @@ public class GamePannel extends JPanel implements Runnable{
 	
 	public void setupGame() {
 		aSetter.setObject();
+		aSetter.setNPC();
 	}
 	
 	public void startGameThread()
@@ -95,6 +100,16 @@ public class GamePannel extends JPanel implements Runnable{
 	public void update()
 	{
 		player.update();
+		
+		//NPC
+		for (int i = 0; i < npc.length; i++) {
+			if (npc[i] != null){
+				npc[i].update();
+			}
+			
+		}
+		
+		
 	}
 	public void paintComponent(Graphics g)
 	{
@@ -107,10 +122,19 @@ public class GamePannel extends JPanel implements Runnable{
 		
 		//object
 		for(int i=0; i < obj.length; i++) {
-			if(obj[i]!=null) {
+			if(obj[i] !=null) {
 				obj[i].draw(g2, this);
 			}
 		}
+		
+		//NPC
+		for (int i = 0; i < npc.length; i++) {
+			if (this.npc[i] != null) {
+			    this.npc[i].draw(g2);
+			}
+			
+		}
+		
 		
 		//player
 		player.draw(g2);
