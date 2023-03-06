@@ -1,6 +1,7 @@
 package object;
 
 import java.awt.Graphics2D;
+
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
@@ -15,7 +16,10 @@ public class SuperObject {
 	public int solidAreaDefaultX = 0;
 	public int solidAreaDefaultY = 0;
 	
+	
+	
 	public void draw(Graphics2D g2, GamePannel gp) {
+		
 		int screenX = worldX - gp.player.worldX + gp.player.screenX;
 		//absolute position of a tile = screen center's absolute position + the distance between it and the tile (screenX=player.screenX)
 		int screenY = worldY - gp.player.worldY + gp.player.screenY;

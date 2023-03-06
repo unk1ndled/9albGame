@@ -39,7 +39,7 @@ public class GamePannel extends JPanel implements Runnable{
 	public AssetSetter aSetter = new AssetSetter(this);
 	public Player player = new Player(this,keyH);
 	
-	public SuperObject obj[] = new SuperObject[10];//nmbr of diplayed objects of at same time
+	public SuperObject obj[] = new SuperObject[100];//nmbr of diplayed objects of at same time
 	
 	
     static int frames = 0 ;
