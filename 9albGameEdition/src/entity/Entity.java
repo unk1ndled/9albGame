@@ -20,6 +20,8 @@ public class Entity {
 	public int solidAreaDefaultX, solidAreaDefaultY;
 	public boolean collisionOn = false;
 	public int actionLockCounter;
+	public int actiontimer=1;
+
 	
 	public Entity(GamePannel gp) {
 		this.gp=gp;
@@ -31,6 +33,7 @@ public class Entity {
 		setAction();
 		collisionOn =false;
 		gp.cChecker.checkTile(this);
+		gp.cChecker.checkPlayer(this);
 		
 		//COLLISION==FALSE -->PLAYER MOVE
 		if((collisionOn == false)&&(!isResting)) {
@@ -40,23 +43,27 @@ public class Entity {
 			case "left" : worldX -= speed; break;
 			case "right" : worldX += speed; break;
 			}
+			spriteCounter++;
+			if (spriteCounter>6)
+			{
+				if (spriteNum==1)
+	            {
+	            	spriteNum=2;
+				}
+				else if (spriteNum==2)
+	            {
+	            	spriteNum=1;
+				}
+				spriteCounter=0;
+	  
+			}
+		
 
+		}if(collisionOn == true) {
+			isResting=true;
 		}
 		
-		spriteCounter++;
-		if (spriteCounter>6)
-		{
-			if (spriteNum==1)
-            {
-            	spriteNum=2;
-			}
-			else if (spriteNum==2)
-            {
-            	spriteNum=1;
-			}
-			spriteCounter=0;
-  
-		}
+
 		
 		}
 	
