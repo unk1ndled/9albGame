@@ -14,6 +14,15 @@ public class NPC extends Entity{
 		direction = "down";
 		speed = 3;
 		getNPCImage(npcName);
+		
+		solidArea.x= 10;
+		solidArea.y= 26;
+		
+		solidAreaDefaultX=solidArea.x;
+		solidAreaDefaultY=solidArea.y;
+		
+		solidArea.width= 24;
+		solidArea.height= 20; 
 	}
 	
 
@@ -49,7 +58,9 @@ public class NPC extends Entity{
 		Random random = new Random();
 		int i = random.nextInt(100)+1;
 		
-		if (this.actionLockCounter==110) {
+		if (this.actionLockCounter==this.actiontimer) {
+			actiontimer=random.nextInt(50)+80;
+
 			
 			int j = random.nextInt(3);
 			
