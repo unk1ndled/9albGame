@@ -35,7 +35,7 @@ public class Entity {
 		gp.cChecker.checkTile(this);
 		gp.cChecker.checkPlayer(this);
 		
-		//COLLISION==FALSE -->PLAYER MOVE
+		//COLLISION==FALSE -->PLAYER MOVEw
 		if((collisionOn == false)&&(!isResting)) {
 			switch(direction) {
 			case "up" : worldY -= speed; break;
