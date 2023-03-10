@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import javax.imageio.ImageIO;
 
 import main.GamePannel;
+import main.Utilitytool;
 
 public class TileManager {
 	GamePannel gp;
@@ -27,98 +28,54 @@ public class TileManager {
 	}
 	
 	public void getTileImage() {
-		try {
-			
-			tile[0] =new Tile();
-			tile[0].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01_top_left.png"));
-			//tile[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
-			
-			tile[1] =new Tile();
-			tile[1].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01_top.png"));
 
-			tile[2] =new Tile();
-			tile[2].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01_top_right.png"));
+			setUp(0,"grass_tiles","grass01_top_left",false);
+			setUp(1,"grass_tiles","grass01_top",false);
+			setUp(2,"grass_tiles","grass01_top_right",false);
+			setUp(3,"grass_tiles","grass01_left",false);
+			setUp(4,"grass_tiles","grass01",false);
+			setUp(5,"grass_tiles","grass01_right",false);
+			setUp(6,"grass_tiles","grass01_bottom_left",false);
+			setUp(7,"grass_tiles","grass01_bottom",false);
+			setUp(8,"grass_tiles","grass01_bottom_right",false);
+			setUp(9,"grass_tiles","tree01",true);
 			
-			tile[3] =new Tile();
-			tile[3].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01_left.png"));
-			
-			tile[4] =new Tile();
-			tile[4].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01.png"));
-			
-			tile[5] =new Tile();
-			tile[5].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01_right.png"));
-			
-			tile[6] =new Tile();
-			tile[6].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01_bottom_left.png"));
-			
-			tile[7] =new Tile();
-			tile[7].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01_bottom.png"));
-			
-			tile[8] =new Tile();
-			tile[8].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/grass01_bottom_right.png"));
-			
-			tile[9] =new Tile();
-			tile[9].image = ImageIO.read(getClass().getResourceAsStream("/grass_tiles/tree01.png"));
-			
-			tile[10] =new Tile();
-			tile[10].image = ImageIO.read(getClass().getResourceAsStream("/tiles/ground06.png"));
-			
-			tile[11] =new Tile();
-			tile[11].image = ImageIO.read(getClass().getResourceAsStream("/tiles/inpt_default_outer_wall.png"));
-			
-			tile[12] =new Tile();
-			tile[12].image = ImageIO.read(getClass().getResourceAsStream("/tiles/ground07.png"));
-			
-			tile[13] =new Tile();
-			tile[13].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
-
-			tile[14] =new Tile();
-			tile[14].image = ImageIO.read(getClass().getResourceAsStream("/tiles/lightgrey.png"));
-			
-			tile[15] =new Tile();
-			tile[15].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
-			
-			tile[16] =new Tile();
-			tile[16].image = ImageIO.read(getClass().getResourceAsStream("/tiles/scenewall.png"));
-			
-			tile[17] =new Tile();
-			tile[17].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
-			
-			tile[18] =new Tile();
-			tile[18].image = ImageIO.read(getClass().getResourceAsStream("/zlafa/zlafa03.png"));
-			
-			tile[19] =new Tile();
-			tile[19].image = ImageIO.read(getClass().getResourceAsStream("/zlafa/zlafa01.png"));
-			
-			tile[20] =new Tile();
-			tile[20].image = ImageIO.read(getClass().getResourceAsStream("/zlafa/zlafa02.png"));
-			
-			tile[21] =new Tile();
-			tile[21].image = ImageIO.read(getClass().getResourceAsStream("/zlafa/zlafa_inner_walll.png"));
-			
-			tile[22] =new Tile();
-			tile[22].image = ImageIO.read(getClass().getResourceAsStream("/tiles/chbka.png"));
-			
-			tile[23] =new Tile();
-			tile[23].image = ImageIO.read(getClass().getResourceAsStream("/tiles/greymarkings.png"));
-			
-			tile[24] =new Tile();
-			tile[24].image = ImageIO.read(getClass().getResourceAsStream("/tiles/floor01.png"));
-			
-			
-			tile[11].collision=true;
-			tile[16].collision=true;
-			tile[22].collision=true;
-			tile[21].collision=true;
-			tile[9].collision=true;
+			setUp(10,"tiles","ground06",false);
+			setUp(11,"tiles","inpt_default_outer_wall",true);
+			setUp(12,"tiles","ground07",false);
+			setUp(13,"tiles","floor01",false);
+			setUp(14,"tiles","lightgrey",false);
+			setUp(15,"tiles","floor01",false);
+			setUp(16,"tiles","scenewall",true);
+			setUp(17,"tiles","floor01",false);
+			setUp(18,"zlafa","zlafa03",false);
+			setUp(19,"zlafa","zlafa01",false);
+			setUp(20,"zlafa","zlafa02",false);
+			setUp(21,"zlafa","zlafa_inner_walll",true);
+			setUp(22,"tiles","chbka",true);
+			setUp(23,"tiles","greymarkings",false);
+			setUp(24,"tiles","ground03",false);
 
 
-		}
-		catch(IOException e) {
-			e.printStackTrace();
-		}
+
 	}
 	
+	public void setUp(int index,String imagePackage, String imageName,boolean collision) {
+		Utilitytool uTool = new Utilitytool();
+		
+		try {
+			tile[index]=new Tile();
+			tile[index].image = ImageIO.read(getClass().getResourceAsStream("/"+imagePackage+"/"+imageName+".png"));
+			uTool.scaledImage(tile[index].image, gp.tileSize, gp.tileSize);
+			tile[index].collision=collision;
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 	
 	public void loadMap(String mapPath) {
 		try {
