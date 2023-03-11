@@ -149,8 +149,8 @@ public class AssetSetter {
 		
 		
 		gp.npc[2]= new NPC(gp,"blackrizz");
-		gp.npc[2].worldX=gp.tileSize*45;
-		gp.npc[2].worldY=gp.tileSize*89;
+		gp.npc[2].worldX=gp.tileSize*28;
+		gp.npc[2].worldY=gp.tileSize*95;
 		
 		gp.npc[3]= new NPC(gp,"punisher");
 		gp.npc[3].worldX=gp.tileSize*60;

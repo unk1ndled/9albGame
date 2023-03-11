@@ -21,7 +21,8 @@ public class Entity {
 	public boolean collisionOn = false;
 	public int actionLockCounter;
 	public int actiontimer=1;
-
+	
+	public String dialogues[] = new String[20];
 	
 	public Entity(GamePannel gp) {
 		this.gp=gp;
@@ -34,6 +35,8 @@ public class Entity {
 		collisionOn =false;
 		gp.cChecker.checkTile(this);
 		gp.cChecker.checkPlayer(this);
+		gp.cChecker.checkObject(this, false);
+
 		
 		//COLLISION==FALSE -->PLAYER MOVEw
 		if((collisionOn == false)&&(!isResting)) {
@@ -155,5 +158,8 @@ public class Entity {
 		
 			
 		}
+	
+	public void speak() {}
+
 		
 }

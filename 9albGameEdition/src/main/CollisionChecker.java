@@ -156,7 +156,7 @@ public class CollisionChecker {
 					entity.solidArea.y -= entity.speed;
 					if(entity.solidArea.intersects(target[i].solidArea)) {
 							entity.collisionOn = true;
-						
+							index=i;
 						//System.out.println("wa fen !!");
 					}
 					break;
@@ -164,12 +164,15 @@ public class CollisionChecker {
 					entity.solidArea.y += entity.speed;
 					if(entity.solidArea.intersects(target[i].solidArea)) {
 							entity.collisionOn = true;
+							index=i;
+
 					}
 					break;
 				case "left" :
 					entity.solidArea.x -= entity.speed;
 					if(entity.solidArea.intersects(target[i].solidArea)) {
 							entity.collisionOn = true;
+							index=i;
 
 					}
 					break;
@@ -178,6 +181,7 @@ public class CollisionChecker {
 					if(entity.solidArea.intersects(target[i].solidArea)) {
 
 							entity.collisionOn = true;
+							index=i;
 
 					}
 					break;

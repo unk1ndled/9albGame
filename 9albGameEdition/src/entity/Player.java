@@ -205,10 +205,10 @@ public class Player extends Entity{
 	public void interactWithNpc(int npcindex) {
 		
 		if(npcindex != 999) {
+			gp.gameState=gp.dialogueState;
+			gp.npc[npcindex].speak();
 			
-			System.out.println("npc");
 		}
-		
 	}
 	
 	

@@ -23,7 +23,8 @@ public class NPC extends Entity{
 		
 		solidArea.width= 24;
 		solidArea.height= 20; 
-	}
+		
+		setDialogue();	}
 	
 
 
@@ -92,6 +93,14 @@ public class NPC extends Entity{
 			} 
 			}
 
+	}
+	
+	public void setDialogue() {
+		dialogues[0]="hiii. ";
+	}
+	
+	public void speak() {
+		gp.ui.currentDialogue=dialogues[0];
 	}
 
 }
