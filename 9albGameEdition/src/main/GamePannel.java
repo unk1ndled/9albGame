@@ -37,6 +37,7 @@ public class GamePannel extends JPanel implements Runnable{
 	//sys
 	TileManager tileM = new TileManager(this);
 	KeyHandler keyH = new KeyHandler(this);
+	Sound sound = new Sound();
 	Thread gameThread;
 	public CollisionChecker cChecker = new CollisionChecker(this);
 	public AssetSetter aSetter = new AssetSetter(this);
@@ -73,6 +74,8 @@ public class GamePannel extends JPanel implements Runnable{
 		aSetter.setObject();
 		aSetter.setNPC();
 		gameState = playState;
+		
+		playMusic(0);
 	}
 	
 	public void startGameThread()
@@ -161,6 +164,23 @@ public class GamePannel extends JPanel implements Runnable{
 	
 	    g2.dispose();
 	
+	}
+	
+	public void playMusic(int i) {
+		
+		sound.setFile(0);
+		sound.play();
+		sound.loop();
+	}
+	
+	public void stopMusic() {
+		sound.stop();
+	}
+	
+	public void playSE(int i) {
+		
+		sound.setFile(i);
+		sound.play();
 	}
 
 }
