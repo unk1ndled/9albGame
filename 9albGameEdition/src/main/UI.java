@@ -39,18 +39,33 @@ public class UI {
 		
 		
 		
-		
 		if (gp.gameState==gp.playState) {
 		//Gamestate stuff
 			//TIME
+			drawSubWindow(5,5,gp.tileSize*6,gp.tileSize*2 + 15);
 			playTime +=(double)1/60;
+			
+			g2.drawString("Imposters caught : ", gp.tileSize, gp.tileSize);
+			g2.drawString("Time : "+dFormat.format(playTime),gp.tileSize , 80);
+			
+			//MESSAGE
+				if(messageOn == true) {
+					g2.drawString(message, 0, 0);
+					
+					messageCounter++;
+					
+					if(messageCounter > 120) {
+						messageCounter = 0;
+						messageOn = false;
+					}
+				}
 			}
 		
 		
 		
 		if (gp.gameState==gp.pauseState) {
 			//pauseState stuff
-			drawPauseScreen();
+			drawPauseScreen(playTime);
 			}
 		
 		
@@ -60,29 +75,21 @@ public class UI {
 			}
 		
 		else {
-		g2.drawString("Imposters caught : ", 50, 50);
-		g2.drawString("Time : "+dFormat.format(playTime),gp.tileSize , 80);
-		//MESSAGE
-			if(messageOn == true) {
-				g2.drawString(message, 0, 0);
-				
-				messageCounter++;
-				
-				if(messageCounter > 120) {
-					messageCounter = 0;
-					messageOn = false;
-				}
-			}
+		
 		}
 		
 
 	}
-	public void drawPauseScreen() {
+	public void drawPauseScreen(double playTime) {
+		
+		drawSubWindow(gp.tileSize*2,gp.tileSize*3,gp.tileSize*12,gp.tileSize*5);
 		String text = "PAUSED";
 		int x=getCenterForText(text);
 		int y = gp.screenHeight/2 - 48;
 		
 		g2.drawString(text,x,y);
+		g2.drawString("Imposters caught : ", getCenterForText("Imposters left : 10")-gp.tileSize*3, gp.tileSize*6 + 20);
+		g2.drawString("Time : "+dFormat.format(playTime),getCenterForText("Imposters caught : ")+gp.tileSize*3 + 20, gp.tileSize*6 + 20);
 	}
 	
 	public void drawDialogueScreen() {
@@ -94,7 +101,14 @@ public class UI {
 		int height = gp.tileSize*4;
 		
 		drawSubWindow(x,y,width,height);
-		g2.drawString(currentDialogue,x+48,y+48);
+		
+		g2.setFont(g2.getFont().deriveFont(Font.PLAIN,20f));
+		x+=gp.tileSize;
+		y+=gp.tileSize;
+		for(String line : currentDialogue.split("/n")) {
+			g2.drawString(line,x,y);
+			y+=40;
+		}
 
 	}
 	

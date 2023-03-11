@@ -17,6 +17,9 @@ public class Player extends Entity{
 	public final int screenX;
 	public final int screenY;
 	int hasObject = 0;
+	int npcIndex=999;
+	
+
 	
 	
 	public Player(GamePannel gp, KeyHandler keyH)
@@ -93,6 +96,7 @@ public class Player extends Entity{
 	}
 	public void update()
 	{
+		
 		if ((keyH.upPressed==true)||(keyH.downPressed==true)||(keyH.leftPressed==true)||(keyH.rightPressed==true)) 
 		{
 			this.isResting=false;
@@ -122,8 +126,7 @@ public class Player extends Entity{
 			interactWithObject(objIndex);
 			
 			//CHECK NPC COLLISION
-			int npcindex = gp.cChecker.checkEntity(this, gp.npc);
-			interactWithNpc(npcindex);
+			npcIndex = gp.cChecker.checkEntity(this, gp.npc);
 
 			
 			//COLLISION==FALSE -->PLAYER MOVE
@@ -182,6 +185,8 @@ public class Player extends Entity{
 				}
 			}
 		}
+		npcIndex =gp.cChecker.checkEntityforInteraction(this, gp.npc);
+		interactWithNpc(npcIndex);
 		
 	}
 	
@@ -204,10 +209,12 @@ public class Player extends Entity{
 	
 	public void interactWithNpc(int npcindex) {
 		
-		if(npcindex != 999) {
-			gp.gameState=gp.dialogueState;
-			gp.npc[npcindex].speak();
-			
+		if (keyH.interactPressed) {
+			if(npcindex != 999) {
+				gp.gameState=gp.dialogueState;
+				gp.npc[npcindex].speak();
+				
+			}
 		}
 	}
 	

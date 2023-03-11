@@ -212,8 +212,7 @@ public class CollisionChecker {
 			entity.solidArea.y -= entity.speed;
 			if(entity.solidArea.intersects(gp.player.solidArea)) {
 					entity.collisionOn = true;
-				
-				//System.out.println("wa fen !!");
+
 			}
 			break;
 		case "down" :
@@ -246,4 +245,69 @@ public class CollisionChecker {
 		
 		
 	}
+	
+	public int checkEntityforInteraction(Entity entity,Entity[] target) {
+		
+		int index = 999;
+		for(int i=0;i<target.length;i++) {
+			
+			if(target[i]!=null) {
+				//get entity solid area position
+				
+				
+				entity.interactionArea.x= entity.worldX + entity.solidArea.x;
+				entity.interactionArea.y= entity.worldY + entity.solidArea.y;
+				
+				// create interactionbox 
+				
+				//get npc solid area position
+				target[i].interactionArea.x = target[i].worldX + target[i].solidAreaDefaultX;
+				target[i].interactionArea.y = target[i].worldY + target[i].solidAreaDefaultY;
+				
+				
+				
+				switch(entity.direction) {
+				case "up" :
+					entity.interactionArea.y -= entity.speed;
+					if(entity.interactionArea.intersects(target[i].interactionArea)) {
+							index=i;
+						//System.out.println("wa fen !!");
+					}
+					break;
+				case "down" :
+					entity.interactionArea.y += entity.speed;
+					if(entity.interactionArea.intersects(target[i].interactionArea)) {
+							index=i;
+
+					}
+					break;
+				case "left" :
+					entity.interactionArea.x -= entity.speed;
+					if(entity.interactionArea.intersects(target[i].interactionArea)) {
+							index=i;
+
+					}
+					break;
+				case "right" :
+					entity.interactionArea.x += entity.speed;
+					if(entity.interactionArea.intersects(target[i].interactionArea)) {
+							index=i;
+
+					}
+					break;
+				}
+				
+				entity.interactionArea.x = entity.solidAreaDefaultX;
+				entity.interactionArea.y = entity.solidAreaDefaultY;
+				target[i].interactionArea.x = target[i].solidAreaDefaultX;
+				target[i].interactionArea.y = target[i].solidAreaDefaultY;
+				
+			}
+		}
+	
+		
+		return index;
+	
+	}
+	
 }

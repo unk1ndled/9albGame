@@ -17,12 +17,24 @@ public class Entity {
 	public int spriteCounter=0;
 	public int spriteNum=1;
 	public Rectangle solidArea = new Rectangle(0,0,48,48);
+	
+	/*
+	 * if a = rec1 length
+	 * and b = rec2 length
+	 * then a*a/b = offset to center them 
+	 * 
+	 */
+	
+	//thus with a = 48 and b = 64
+	
+	public Rectangle interactionArea = new Rectangle(-36,-36,64,64);
 	public int solidAreaDefaultX, solidAreaDefaultY;
 	public boolean collisionOn = false;
 	public int actionLockCounter;
 	public int actiontimer=1;
 	
 	public String dialogues[] = new String[20];
+	public int dialogueIndex = 0;
 	
 	public Entity(GamePannel gp) {
 		this.gp=gp;

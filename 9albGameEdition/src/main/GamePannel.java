@@ -9,6 +9,7 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 import entity.Entity;
+import entity.NPC;
 import entity.Player;
 import object.SuperObject;
 import tile.TileManager;
@@ -60,7 +61,13 @@ public class GamePannel extends JPanel implements Runnable{
     public final int dialogueState =3;
 
     
-    
+	public int getNpcIndex(NPC npc) {
+		
+		for(int i=0;i<this.npc.length;i++) {
+			if (this.npc[i]==npc) {return i;}
+		}
+		return -1;
+	}
     
 	public GamePannel()
 	{
