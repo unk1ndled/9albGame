@@ -137,6 +137,7 @@ public class NPC extends Entity{
 			dialogues[0]="Oh shoot.. ";
 			dialogues[1]="I'm sorry okay I'll never come back again, /njust let me gooo!!!";
 			dialogues[2]="Okay Okay, you got me just don't hit the face!!";
+			dialogues[3]="ugh!!";
 			}
 
 		

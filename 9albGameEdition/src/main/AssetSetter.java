@@ -130,7 +130,7 @@ public class AssetSetter {
 		//----CHAIRS FACING UP
 		gp.obj[26] = new OBJ_Chair("UP");
 		gp.obj[26].worldX=31* gp.tileSize;
-		gp.obj[26].worldY=99* gp.tileSize;
+		gp.obj[26].worldY=100* gp.tileSize;
 		
 		
 		
