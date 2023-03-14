@@ -52,7 +52,7 @@ public class UI {
 			}
 			
 			g2.drawString("Imposters caught : "+gp.player.impostersCaught, gp.tileSize, gp.tileSize);
-			g2.drawString("Time : "+dFormat.format(playTime),gp.tileSize , 80);
+			g2.drawString("Remaining Time : "+dFormat.format(300-playTime),gp.tileSize , 80);
 			
 			//MESSAGE
 				if(messageOn == true) {
