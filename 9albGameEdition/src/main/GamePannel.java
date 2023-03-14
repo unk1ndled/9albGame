@@ -59,6 +59,7 @@ public class GamePannel extends JPanel implements Runnable{
     public final int playState =1;
     public final int pauseState =2; 
     public final int dialogueState =3;
+    public final int gameFinished =4;
 
     
 	public int getNpcIndex(NPC npc) {
@@ -83,7 +84,7 @@ public class GamePannel extends JPanel implements Runnable{
 		aSetter.setNPC();
 		gameState = playState;
 		
-		playMusic(0);
+		playMusic(1);
 	}
 	
 	public void startGameThread()
@@ -133,7 +134,7 @@ public class GamePannel extends JPanel implements Runnable{
 		}
 		
 		}
-		if (gameState == pauseState) {
+		if (gameState == pauseState || gameState == gameFinished) {
 		//do nothing
 		}
 		
@@ -176,7 +177,7 @@ public class GamePannel extends JPanel implements Runnable{
 	
 	public void playMusic(int i) {
 		
-		sound.setFile(0);
+		sound.setFile(i);
 		sound.play();
 		sound.loop();
 	}

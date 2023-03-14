@@ -14,6 +14,7 @@ public class Sound {
 	public Sound() {
 		
 		soundURL[0] = getClass().getResource("/sound/mainTheme.wav");
+		soundURL[1] = getClass().getResource("/sound/gameplay.wav");
 	}
 	
 	public void setFile(int i) {

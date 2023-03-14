@@ -19,6 +19,8 @@ public class Player extends Entity{
 	int hasObject = 0;
 	int npcIndex=999;
 	
+	public int impostersCaught = 0;
+	
 
 	
 	

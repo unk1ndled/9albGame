@@ -168,6 +168,7 @@ public class NPC extends Entity{
 			if(this.npcName=="redHacker") {
 				int i =gp.getNpcIndex(this);
 				gp.npc[i]=null;
+				gp.player.impostersCaught++;
 			}
 			dialogueIndex-=1;;}
 		

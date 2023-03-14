@@ -17,6 +17,8 @@ public class UI {
 	int messageCounter = 0;
 	public String currentDialogue = "";
 	
+	public boolean gameFinished = false;
+	
 	double playTime;
 	DecimalFormat dFormat = new DecimalFormat("#0.0");
 	
@@ -45,7 +47,11 @@ public class UI {
 			drawSubWindow(5,5,gp.tileSize*6,gp.tileSize*2 + 15);
 			playTime +=(double)1/60;
 			
-			g2.drawString("Imposters caught : ", gp.tileSize, gp.tileSize);
+			if(playTime >= 300) {
+				gp.gameState = gp.gameFinished;
+			}
+			
+			g2.drawString("Imposters caught : "+gp.player.impostersCaught, gp.tileSize, gp.tileSize);
 			g2.drawString("Time : "+dFormat.format(playTime),gp.tileSize , 80);
 			
 			//MESSAGE
@@ -74,6 +80,10 @@ public class UI {
 			drawDialogueScreen();
 			}
 		
+		if(gp.gameState == gp.gameFinished) {
+			drawFinishedScreen();
+		}
+		
 		else {
 		
 		}
@@ -88,7 +98,7 @@ public class UI {
 		int y = gp.screenHeight/2 - 48;
 		
 		g2.drawString(text,x,y);
-		g2.drawString("Imposters caught : ", getCenterForText("Imposters left : 10")-gp.tileSize*3, gp.tileSize*6 + 20);
+		g2.drawString("Imposters caught : "+gp.player.impostersCaught, getCenterForText("Imposters left : 10")-gp.tileSize*3, gp.tileSize*6 + 20);
 		g2.drawString("Time : "+dFormat.format(playTime),getCenterForText("Imposters caught : ")+gp.tileSize*3 + 20, gp.tileSize*6 + 20);
 	}
 	
@@ -110,6 +120,17 @@ public class UI {
 			y+=40;
 		}
 
+	}
+	public void drawFinishedScreen() {
+		drawSubWindow(gp.tileSize*2,gp.tileSize*3,gp.tileSize*12,gp.tileSize*5);
+		String text = "GAME FINISHED";
+		int x=getCenterForText(text);
+		int y = gp.screenHeight/2 - 48;
+		
+		g2.drawString(text,x,y);
+		g2.drawString("Imposters caught : "+gp.player.impostersCaught, getCenterForText("Imposters left : 10")-gp.tileSize*3, gp.tileSize*6 + 20);
+		g2.drawString("Time : "+dFormat.format(playTime),getCenterForText("Imposters caught : ")+gp.tileSize*3 + 20, gp.tileSize*6 + 20);
+		
 	}
 	
 	public void drawSubWindow(int x, int y, int width, int height) {
