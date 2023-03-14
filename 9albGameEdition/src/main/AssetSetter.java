@@ -159,6 +159,63 @@ public class AssetSetter {
 		gp.npc[4]= new NPC(gp,"comandos");
 		gp.npc[4].worldX=gp.tileSize*60;
 		gp.npc[4].worldY=gp.tileSize*89;
+		
+		gp.npc[5]= new NPC(gp,"redHacker");
+		gp.npc[5].worldX=gp.tileSize*45;
+		gp.npc[5].worldY=gp.tileSize*99;
+
+		gp.npc[6]= new NPC(gp,"greenRizz");
+		gp.npc[6].worldX=gp.tileSize*52;
+		gp.npc[6].worldY=gp.tileSize*99;
+
+		
+		gp.npc[7]= new NPC(gp,"redHacker");
+		gp.npc[7].worldX=gp.tileSize*45;
+		gp.npc[7].worldY=gp.tileSize*99;
+		
+		
+		gp.npc[8]= new NPC(gp,"blackrizz");
+		gp.npc[8].worldX=gp.tileSize*28;
+		gp.npc[8].worldY=gp.tileSize*95;
+		
+		gp.npc[9]= new NPC(gp,"punisher");
+		gp.npc[9].worldX=gp.tileSize*60;
+		gp.npc[9].worldY=gp.tileSize*89;
+		
+		gp.npc[10]= new NPC(gp,"comandos");
+		gp.npc[10].worldX=gp.tileSize*60;
+		gp.npc[10].worldY=gp.tileSize*89;
+		
+		gp.npc[11]= new NPC(gp,"redHacker");
+		gp.npc[11].worldX=gp.tileSize*45;
+		gp.npc[11].worldY=gp.tileSize*99;
+		
+		gp.npc[12]= new NPC(gp,"greenRizz");
+		gp.npc[12].worldX=gp.tileSize*52;
+		gp.npc[12].worldY=gp.tileSize*99;
+
+		
+		gp.npc[13]= new NPC(gp,"redHacker");
+		gp.npc[13].worldX=gp.tileSize*45;
+		gp.npc[13].worldY=gp.tileSize*99;
+		
+		
+		gp.npc[14]= new NPC(gp,"blackrizz");
+		gp.npc[14].worldX=gp.tileSize*28;
+		gp.npc[14].worldY=gp.tileSize*95;
+		
+		gp.npc[15]= new NPC(gp,"punisher");
+		gp.npc[15].worldX=gp.tileSize*60;
+		gp.npc[15].worldY=gp.tileSize*89;
+		
+		gp.npc[16]= new NPC(gp,"comandos");
+		gp.npc[16].worldX=gp.tileSize*60;
+		gp.npc[16].worldY=gp.tileSize*89;
+		
+		gp.npc[17]= new NPC(gp,"redHacker");
+		gp.npc[17].worldX=gp.tileSize*45;
+		gp.npc[17].worldY=gp.tileSize*99;
+		
 
 	}
 	
