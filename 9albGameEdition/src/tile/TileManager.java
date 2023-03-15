@@ -5,6 +5,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 
@@ -16,6 +18,8 @@ public class TileManager {
 	public Tile[] tile;
 	public int mapTileNum[][];
 	
+	public List<PositionRemade> availablePositions = new ArrayList<>();
+	
 	public TileManager(GamePannel gp) {
 		
 		this.gp = gp;
@@ -25,7 +29,9 @@ public class TileManager {
 		
 		getTileImage();
 		loadMap("/maps/map01.txt");
+		//findAvailableTiles();
 	}
+	
 	
 	public void getTileImage() {
 
@@ -95,6 +101,15 @@ public class TileManager {
 					int num = Integer.parseInt(numbers[col]);
 					
 					mapTileNum[col][row]=num;
+					
+					if(  tile[num].collision==false) {
+						
+						PositionRemade p = new PositionRemade(col,row);
+
+						
+						availablePositions.add(p);
+					}
+					
 					col++;
 				}
 				if(col == gp.maxWorldCol) {
@@ -149,6 +164,42 @@ public class TileManager {
 		
 		
 	}
+	/*
+	public void findAvailableTiles() {
+		//g2.drawImage(tile[0].image,0,0,gp.tileSize,gp.tileSize,null);
+		
+		int worldCol = 0 ;
+		int worldRow = 0 ;
+		
+		while(worldCol < gp.maxWorldCol && worldRow < gp.maxWorldRow) {
+			
+			int tileNum = mapTileNum[worldCol][worldRow];
+			
+
+			
+			if(  tile[tileNum].collision==false) {
+				
+				PositionRemade p = new PositionRemade(worldCol,worldRow);
+
+				
+				availablePositions.add(p);
+			}
+			
+			
+			worldCol++;
+
+			
+			if(worldCol == gp.maxWorldCol) {
+				worldCol = 0;
+				worldRow++;
+				
+			}
+			
+		}
+		
+		
+	}
+	*/
 	
 	
 	

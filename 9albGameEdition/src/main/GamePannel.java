@@ -47,7 +47,7 @@ public class GamePannel extends JPanel implements Runnable{
 	
 	// entity/objects
 	public SuperObject obj[] = new SuperObject[100];//nmbr of diplayed objects of at same time
-	public Entity npc[] = new Entity[20];
+	public Entity npc[] = new Entity[100];
 	
 	
     static int frames = 0 ;
@@ -81,7 +81,7 @@ public class GamePannel extends JPanel implements Runnable{
 	
 	public void setupGame() {
 		aSetter.setObject();
-		aSetter.setNPC();
+		aSetter.setNPC2();
 		gameState = playState;
 		
 		playMusic(1);

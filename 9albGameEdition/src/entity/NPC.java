@@ -28,6 +28,11 @@ public class NPC extends Entity{
 		solidArea.width= 24;
 		solidArea.height= 20; 
 		
+		if (npcName=="redHacker")
+		{
+			this.speed=5;
+		}
+		
 		setDialogue();	}
 	
 
