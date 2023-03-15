@@ -15,6 +15,11 @@ import object.SuperObject;
 import tile.TileManager;
 
 public class GamePannel extends JPanel implements Runnable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	//Screen settings
 	final int originalTileSize = 16;//16
 	final int scale = 3;

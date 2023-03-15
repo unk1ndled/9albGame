@@ -3,6 +3,7 @@ package main;
 import entity.NPC;
 import object.OBJ_Coffee;
 import object.OBJ_Table;
+import object.OBJ_Tutorial;
 import object.OBJ_Chair;
 
 public class AssetSetter {
@@ -14,6 +15,11 @@ public class AssetSetter {
 	}
 	
 	public void setObject() {
+		gp.obj[99] = new OBJ_Tutorial();
+		gp.obj[99].worldX = 52*gp.tileSize - 428/2;
+		gp.obj[99].worldY = 94*gp.tileSize - 621/2;
+		
+		
 		gp.obj[0] = new OBJ_Coffee();
 		gp.obj[0].worldX=10 * gp.tileSize;
 		gp.obj[0].worldY=10*gp.tileSize;

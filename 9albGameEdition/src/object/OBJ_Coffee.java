@@ -14,6 +14,7 @@ public class OBJ_Coffee extends SuperObject {
 			e.printStackTrace();
 		}
 		
+		
 		collision = true;
 		
 		//you can change the solid area for each object or keep the default values from superobject

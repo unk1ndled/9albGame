@@ -1,7 +1,6 @@
 package object;
 
 import java.awt.Graphics2D;
-import java.awt.Rectangle;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -16,7 +15,7 @@ public class OBJ_Table extends SuperObject {
 		solidArea.height=80;
 		name = "Table";
 		try {
-			image = ImageIO.read(getClass().getResourceAsStream("/objects/table02.png"));
+			image = ImageIO.read(getClass().getResourceAsStream("/objects/Table02.png"));
 		}catch(IOException e) {
 			e.printStackTrace();
 		}

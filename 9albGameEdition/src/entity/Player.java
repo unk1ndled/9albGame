@@ -1,6 +1,5 @@
 package entity;
 
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
@@ -53,8 +52,8 @@ public class Player extends Entity{
 	}
 	public void setDefaultValues()
 	{
-		worldX=gp.tileSize*45 -(gp.tileSize/2);//xstarting position
-		worldY=gp.tileSize*100 -(gp.tileSize/2);//y starting position
+		worldX=gp.tileSize*52 -(gp.tileSize/2);//xstarting position
+		worldY=gp.tileSize*92 -(gp.tileSize/2);//y starting position
 		speed = 6;
 		direction="up";
 	}
@@ -292,6 +291,6 @@ public class Player extends Entity{
 			
 		}
 		g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
-		//System.out.println("X : "+ worldX/48 + "   y : "+ worldY/48 );//TRUUUUUUE
+		System.out.println("X : "+ worldX/48 + "   y : "+ worldY/48 );//TRUUUUUUE
 	}
 }
