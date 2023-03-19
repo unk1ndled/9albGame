@@ -101,7 +101,7 @@ public class GamePannel extends JPanel implements Runnable{
 	public void run() 
 	{
 		double drawInterval=1000000000/FPS;
-		double delta=0;long lastTime = System.nanoTime();
+		double delta=0; long lastTime = System.nanoTime();
 		while(gameThread != null)
 		{
 			
@@ -117,6 +117,7 @@ public class GamePannel extends JPanel implements Runnable{
 				update();
                 updates++;
 				//Draw using updated info
+                
 				// repaint is how we call paint component
 				repaint();
 				frames++;
@@ -140,8 +141,10 @@ public class GamePannel extends JPanel implements Runnable{
 		}
 		
 		}
-		if (gameState == pauseState || gameState == gameFinished) {
+		if (gameState == pauseState || gameState == gameFinished) {\
+			
 		//do nothing
+			
 		}
 		
 
