@@ -51,7 +51,7 @@ public class UI {
 		if (gp.gameState==gp.playState) {
 		//Gamestate stuff
 			//TIME
-			drawSubWindow(5,5,gp.tileSize*6,gp.tileSize*2 + 15);
+			drawSubWindow(5,5,gp.tileSize*6 + 15,gp.tileSize*2 + 15);
 			playTime +=(double)1/60;
 			
 			if(playTime >= 300) {

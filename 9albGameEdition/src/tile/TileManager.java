@@ -29,7 +29,6 @@ public class TileManager {
 		
 		getTileImage();
 		loadMap("/maps/map01.txt");
-		//findAvailableTiles();
 	}
 	
 	
