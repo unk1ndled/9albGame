@@ -7,6 +7,7 @@ import entity.NPC;
 import object.OBJ_Coffee;
 import object.OBJ_Table;
 import object.OBJ_Tutorial;
+import object.OBJ_Wanted;
 import tile.PositionRemade;
 import object.OBJ_Chair;
 
@@ -27,6 +28,11 @@ public class AssetSetter {
 		gp.obj[99] = new OBJ_Tutorial();
 		gp.obj[99].worldX = 52*gp.tileSize - 428/2;
 		gp.obj[99].worldY = 94*gp.tileSize - 621/2;
+		
+		gp.obj[98] = new OBJ_Wanted();
+		gp.obj[98].worldX = 49*gp.tileSize;
+		gp.obj[98].worldY = 89*gp.tileSize;
+			
 		
 		gp.obj[0] = new OBJ_Coffee();
 		gp.obj[0].worldX=10 * gp.tileSize;
