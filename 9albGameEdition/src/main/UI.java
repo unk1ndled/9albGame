@@ -11,6 +11,8 @@ public class UI {
 	GamePannel gp;
 	Graphics2D g2;
 	
+	TitleScreen titleScreen;
+	
 	Font arial_40;
 	public boolean messageOn = false;
 	public String message = "";
@@ -24,6 +26,7 @@ public class UI {
 	
 	public UI(GamePannel gp) {
 		this.gp = gp;
+		this.titleScreen = new TitleScreen();
 		arial_40 = new Font("Arial", Font.PLAIN, 20);
 		
 	}
@@ -39,6 +42,10 @@ public class UI {
 		g2.setFont(arial_40);
 		g2.setColor(Color.white);
 		
+		
+		if(gp.gameState == gp.titleState) {
+			drawTitleScreen();
+		}
 		
 		
 		if (gp.gameState==gp.playState) {
@@ -90,6 +97,12 @@ public class UI {
 		
 
 	}
+	
+	public void drawTitleScreen() {
+		titleScreen.draw(g2, gp);
+	}
+	
+	
 	public void drawPauseScreen(double playTime) {
 		
 		drawSubWindow(gp.tileSize*2,gp.tileSize*3,gp.tileSize*12,gp.tileSize*5);

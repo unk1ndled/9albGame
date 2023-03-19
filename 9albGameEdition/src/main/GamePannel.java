@@ -61,6 +61,7 @@ public class GamePannel extends JPanel implements Runnable{
 	
     //game state
     public int gameState;
+    public final int titleState = 0;
     public final int playState =1;
     public final int pauseState =2; 
     public final int dialogueState =3;
@@ -87,7 +88,7 @@ public class GamePannel extends JPanel implements Runnable{
 	public void setupGame() {
 		aSetter.setObject();
 		aSetter.setNPC2();
-		gameState = playState;
+		gameState = titleState;
 		
 		playMusic(1);
 	}
@@ -152,29 +153,40 @@ public class GamePannel extends JPanel implements Runnable{
 		
 		Graphics2D g2 = (Graphics2D)g;
 		
-		//tile
-		tileM.draw(g2);
-		
-		//object
-		for(int i=0; i < obj.length; i++) {
-			if(obj[i] !=null) {
-				obj[i].draw(g2, this);
+		//titeScreen
+		if(gameState == titleState) {
+			
+			ui.draw(g2);
+			
+			
+		} else {
+			
+			//tile
+			tileM.draw(g2);
+			
+			//object
+			for(int i=0; i < obj.length; i++) {
+				if(obj[i] !=null) {
+					obj[i].draw(g2, this);
+				}
 			}
-		}
-		
-		//NPC
-		for (int i = 0; i < npc.length; i++) {
-			if (this.npc[i] != null) {
-			    this.npc[i].draw(g2);
+			
+			//NPC
+			for (int i = 0; i < npc.length; i++) {
+				if (this.npc[i] != null) {
+				    this.npc[i].draw(g2);
+				}
+				
 			}
+			
+			
+			//player
+			player.draw(g2);
+			
+			ui.draw(g2);
 			
 		}
 		
-		
-		//player
-		player.draw(g2);
-		
-		ui.draw(g2);
 	
 	    g2.dispose();
 	

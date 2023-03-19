@@ -20,6 +20,16 @@ public class KeyHandler implements KeyListener {
 	public void keyPressed(KeyEvent e) {
 		int code = e.getKeyCode();
 		
+		//titlestate controls
+		
+		if(gp.gameState == gp.titleState) {
+			if(code == KeyEvent.VK_SPACE) {
+				
+				gp.gameState = gp.playState;
+			}
+			
+		}
+		
 		//gamestate controls
 		
 		if (gp.gameState==gp.playState) {
