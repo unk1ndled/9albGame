@@ -34,6 +34,21 @@ public class KeyHandler implements KeyListener {
 		
 		if (gp.gameState==gp.playState) {
 			
+			if (code == KeyEvent.VK_M)
+			{
+				if(gp.map.miniMapOn==true) {
+					gp.map.miniMapOn=false;
+				}
+				else {
+					gp.map.miniMapOn=true;
+				}
+				
+				System.out.println("hi");
+			}
+			
+			
+			
+			
 			if (code == KeyEvent.VK_W || code == KeyEvent.VK_UP)
 			{
 				upPressed = true;

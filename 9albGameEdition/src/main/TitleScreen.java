@@ -12,7 +12,7 @@ public class TitleScreen {
 	public BufferedImage spacebar;
 	
 	
-	int timer =25;
+	int timer =0;
 	
 	public TitleScreen() {
 		try {
@@ -29,8 +29,10 @@ public class TitleScreen {
 			
 			g2.drawImage(mainImage,0,0,gp.screenWidth,gp.screenHeight,null);
 			
-			if (timer>=25 && timer<=100) {
+			if (timer>=28 && timer<=100) {
+				
 			g2.drawImage(spacebar,239,411,289,20,null);
+			
 			if (timer==100) {timer=0;}
 			}
 			timer++;

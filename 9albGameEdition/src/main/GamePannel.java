@@ -12,13 +12,12 @@ import entity.Entity;
 import entity.NPC;
 import entity.Player;
 import object.SuperObject;
+import tile.Map;
 import tile.TileManager;
 
 public class GamePannel extends JPanel implements Runnable{
 	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	//Screen settings
 	final int originalTileSize = 16;//16
@@ -53,6 +52,7 @@ public class GamePannel extends JPanel implements Runnable{
 	// entity/objects
 	public SuperObject obj[] = new SuperObject[100];//nmbr of diplayed objects of at same time
 	public Entity npc[] = new Entity[100];
+	public final Map map = new Map(this);
 	
 	
     static int frames = 0 ;
@@ -141,7 +141,7 @@ public class GamePannel extends JPanel implements Runnable{
 		}
 		
 		}
-		if (gameState == pauseState || gameState == gameFinished) {\
+		if (gameState == pauseState || gameState == gameFinished) {
 			
 		//do nothing
 			
@@ -185,7 +185,7 @@ public class GamePannel extends JPanel implements Runnable{
 			
 			//player
 			player.draw(g2);
-			
+			map.drawMiniMap(g2);
 			ui.draw(g2);
 			
 		}
