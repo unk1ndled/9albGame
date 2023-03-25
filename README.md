@@ -3,13 +3,16 @@ A 2D RPG developed with Java and its native library.
 
 A player must catch all the imposters in the map within the time-bound.
 
-### [Download]
+### [Download](https://github.com/unk1ndled/9albGame/releases/download/0.1.1/gameFinal.jar)
 
 ## Authors
 
 [**BHU Hamza**](https://github.com/Bisho11)
+
 [**BLACKTUX Amine**](https://github.com/unk1ndled/)
+
 [**HAITHAMOX**](https://github.com/Haitham-Oumanhou)
+
 
 ## License
 
