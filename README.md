@@ -16,6 +16,8 @@ A player must catch all the imposters in the map within the time-bound.
 
 ## License
 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ## Acknowledgments
 
 This project is inspired by and incremented upon [RyiSnow's Tutorial Series.](https://www.youtube.com/playlist?list=PL_QPQmz5C6WUF-pOQDsbsKbaBZqXj4qSq)
